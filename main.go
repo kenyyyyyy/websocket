@@ -30,8 +30,7 @@ func join(w http.ResponseWriter, r *http.Request) {
 	Clients=append(Clients,conn)
 
 	w.WriteHeader(200)
-	w.Write([]byte("欢迎加入房间"))
-	fmt.Println("欢迎加入房间")
+	fmt.Println(len(Clients))
 	for  {
 		if _,data,err:=conn.ReadMessage();err==nil{
 			write(data)
